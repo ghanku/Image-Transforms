@@ -94,4 +94,8 @@ def slant_matrix(n):
 if __name__ == '__main__':
     input = 'https://raw.githubusercontent.com/mikolalysenko/lena/master/lena.png'
     I = imageio.imread(input, pilmode='RGB')
-    S_t = slant_transform(I)
+    try:
+        S_t = slant_transform(I)
+        print('done')
+    except:
+        print('Error')
