@@ -82,5 +82,5 @@ def QunatizeSV(SV):
 if __name__ == '__main__':
     input = 'https://raw.githubusercontent.com/mikolalysenko/lena/master/lena.png'
     I = imageio.imread(input, pilmode='RGB')
-    S_t = DCD(I, img_type='RGB', order=8)
+    P, C = DCD(I, img_type='RGB', order=8)
     print('done')
