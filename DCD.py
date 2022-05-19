@@ -18,7 +18,7 @@ def DCD(img, img_type='RGB', order=8):
 
             arguments
               img  : either HSV image, or RGB image
-              img_type : input image type either 'HSV' or RGB
+              img_type : input image type either 'HSV' or 'RGB'
               order : n first dominant colors
 
             return
@@ -66,16 +66,34 @@ def DCD(img, img_type='RGB', order=8):
 
 
 def QunatizeH(H):
+    ''' Calculates the Quantization of the Hue channel of an image
+
+            arguments
+              H  : Hue channel of HSV image
+
+            return
+                  numpy array with size equal to input image
+          '''
 
     bins = np.array([20, 40, 75, 155, 190, 270, 295, 316])
     ix = np.digitize(H, bins=bins)
+
     return ix
 
 
 def QunatizeSV(SV):
+    ''' Calculates the Quantization of either the Saturation or Value channels of an image
+
+            arguments
+              SV  : either S or V channels of an image
+
+            return
+                  numpy array with size equal to input image
+          '''
 
     bins = np.array([1, 0.7, 0.2])
     ix = np.digitize(SV, bins=bins, right=True)
+
     return ix
 
 
