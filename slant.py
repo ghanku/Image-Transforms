@@ -10,7 +10,6 @@
 
 
 import numpy as np
-import matplotlib.pyplot as plt
 import imageio
 import skimage.color
 from numpy import sqrt, zeros, eye
@@ -94,8 +93,5 @@ def slant_matrix(n):
 if __name__ == '__main__':
     input = 'https://raw.githubusercontent.com/mikolalysenko/lena/master/lena.png'
     I = imageio.imread(input, pilmode='RGB')
-    try:
-        S_t = slant_transform(I)
-        print('done')
-    except:
-        print('Error')
+    S_t = slant_transform(I)
+    print('done')
